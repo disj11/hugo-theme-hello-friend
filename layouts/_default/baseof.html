@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.Language }}">
   <head>
+    {{ template "_internal/google_analytics.html" . }}
     {{ block "title" . }}
       <title>
         {{ if .IsHome }}{{ $.Site.Title }}{{ with $.Site.Params.Subtitle }} —
@@ -22,9 +23,5 @@
         {{ partial "footer.html" . }}
       {{ end }}
     </div>
-
-    {{ if $.Site.GoogleAnalytics }}
-      {{ template "_internal/google_analytics.html" . }}
-    {{ end }}
   </body>
 </html>
